@@ -1,0 +1,445 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+.container {
+    min-height: 100vh;
+    background-color: #f5f5f5;
+    display: flex;
+    flex-direction: column;
+}
+
+.encabezado {
+    background: linear-gradient(to right, #000000 35%, #000000 35%); /* Ajustar el gradiente al 35% */
+    padding: 15px 40px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contacto {
+    display: flex;
+    gap: 80px;
+    justify-content: flex-start; /* Alinea los elementos hacia la izquierda */
+}
+
+.parte1, .parte2 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: flex-start; 
+    flex: 1; 
+}
+
+.parte1 svg, .parte2 svg {
+    width: 15px;
+    height: 15px;
+}
+
+.parte1 span, .parte2 span {
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.parte1 p, .parte2 p {
+    font-size: 11px;
+    opacity: 1; 
+    color: #c9bfbf; 
+    margin-top: 2px;
+}
+
+.botonmorado {
+    background-color: #6a0dad;
+    color: white;
+    padding: 8px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 13px;
+    transition: background-color 0.3s;
+}
+
+.botonmorado:hover {
+    background-color: #5a0b8d;
+}
+
+.cuerpo {
+    display: flex;
+    flex: 1;
+    gap: 0;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.contenedor1 {
+    width: 35%;
+    padding: 25px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.personaimg {
+    width: 100%;
+    max-width: 200px;
+    border-radius: 8px;
+    margin: 0 0 20px 0; 
+    display: block;
+}
+
+h1 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.Cargo {
+    color: #666;
+    font-size: 16px;
+    margin-bottom: 25px;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.info-personal {
+    margin-bottom: 20px;
+}
+
+.info-personal p {
+    margin-bottom: 0; 
+    display: inline-block;
+    margin-right: 0px; 
+}
+
+.purple-text {
+    color: #8a2be2;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.born_date {
+    color: #666;
+    font-size: 12px;
+}
+
+.logos {
+    display: flex;
+    justify-content: left;
+    gap: 10px;
+    margin: 25px 0;
+}
+
+.logos svg {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.logos svg:hover {
+    transform: translateY(-3px);
+}
+
+.divisor {
+    width: 30px;
+    height: 5px; /* Hacer la línea morada más gruesa */
+    background-color: #b700ff;
+    margin: 20px 0;
+    border-radius: 2px;
+}
+
+.about {
+    text-align: left;
+    font-weight: bold;
+    color: #333;
+    font-size: 16px;
+}
+
+.contenedor2 {
+    width: 65%;
+    padding: 25px;
+    background: #f0f0f0; 
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contenedor2 h2 {
+    color: #000000; 
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    color: rgb(170, 156, 156); 
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.subtitle-spacing {
+    margin-bottom: 48px; 
+}
+
+.work-experience {
+    color: #000000; /* Cambiar el color a negro */
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.job-title {
+    color: #000000; /* Cambiar el color a negro */
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.previous-jobs {
+    color: gray;
+    font-size: 14px;
+    margin-bottom: 48px; /* Espaciado de tres dedos en una pantalla de 15.6 pulgadas */
+}
+
+.job-section {
+    margin-top: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ddd; /* Divider line between jobs */
+    color: #000000; /* Cambiar el color a negro */
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.job-section:last-child {
+    border-bottom: none;
+}
+
+.job-section h3 {
+    font-size: 18px;
+    margin: 5px 0;
+    font-weight: bold;
+}
+
+.job-section h2 {
+    color: #000000; /* Cambiar el color a negro */
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.company {
+    color: #6a0dad; /* Cambiar el color a morado */
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.company-name {
+    color: #6a0dad; /* Cambiar el color a morado */
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 2px; /* Reducir aún más el espacio inferior */
+}
+
+.date {
+    color: gray; /* Cambiar el color a gris */
+    font-size: 12px;
+    margin-bottom: 32px; /* Aumentar el espacio a dos dedos en una pantalla de 15.6 pulgadas */
+}
+
+.date-range {
+    color: gray; /* Cambiar el color a gris */
+    font-size: 12px; /* Más pequeño que "Design & Web Studio" */
+    letter-spacing: 1px; /* Letras más separadas */
+    margin-bottom: 16px; /* Reducir el espacio inferior */
+}
+
+.job-description,
+p {
+    color: gray; /* Cambiar el color a gris */
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 24px; /* Agregar espacio entre el texto y las viñetas */
+}
+
+ul {
+    list-style: none;
+    margin: 15px 0;
+    margin-bottom: 32px; /* Agregar espacio entre las viñetas y el siguiente texto */
+}
+
+ul li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 10px;
+    color: #666;
+    font-size: 14px;
+}
+
+ul li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 8px;
+    height: 8px;
+    border: 2px solid #8a2be2;
+    border-radius: 50%;
+}
+
+.demos {
+    position: fixed;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #000;
+    color: #ffa500;
+    padding: 15px 8px;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.menu-demos {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    margin-bottom: 5px;
+}
+
+.menu-demos span {
+    width: 5px;
+    height: 5px;
+    background-color: #ffa500;
+    border-radius: 50%;
+}
+
+.nombre {
+    color: black;
+    font-weight: bold;
+}
+
+/* Estilos Responsivos */
+@media screen and (max-width: 768px) {
+    .encabezado {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .contacto {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .cuerpo {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .contenedor1, .contenedor2 {
+        width: 100%;
+        max-width: 400px;
+        padding: 15px;
+    }
+
+    .personaimg {
+        max-width: 150px;
+        margin: 0 auto 15px;
+    }
+
+    .logos {
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .demos {
+        position: static;
+        margin-top: 20px;
+        writing-mode: horizontal-tb;
+        text-orientation: mixed;
+        padding: 10px;
+        justify-content: center;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .contenedor1 {
+        width: 40%;
+    }
+
+    .contenedor2 {
+        width: 60%;
+    }
+
+    .logos {
+        gap: 20px;
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    .contenedor1 {
+        width: 35%;
+    }
+
+    .contenedor2 {
+        width: 65%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .encabezado {
+        flex-direction: column;
+        gap: 15px;
+        background: linear-gradient(to bottom, #8a2be2 35%, #6a0dad 35%); /* Ajustar el gradiente para pantallas pequeñas */
+    }
+
+    .contacto {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .cuerpo {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contenedor1, .contenedor2 {
+        width: 100%;
+        max-width: 400px;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1200px) {
+    .encabezado {
+        background: linear-gradient(to right, #8a2be2 40%, #6a0dad 40%); /* Ajustar el gradiente para pantallas medianas */
+    }
+
+    .contenedor1 {
+        width: 40%;
+    }
+
+    .contenedor2 {
+        width: 60%;
+    }
+}
+
+@media screen and (min-width: 1201px) {
+    .encabezado {
+        background: linear-gradient(to right, #8a2be2 35%, #6a0dad 35%); /* Ajustar el gradiente para pantallas grandes */
+    }
+
+    .contenedor1 {
+        width: 35%;
+    }
+
+    .contenedor2 {
+        width: 65%;
+    }
+}

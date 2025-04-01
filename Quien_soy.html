@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        /*Encabezado*/
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 15px 0px;
+            background-color: rgb(46, 45, 45);
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h2 {
+            margin-left: 130px;
+        }
+
+        nav {
+            margin-right: 130px;
+        }
+
+        header a {
+            color: white;
+            text-decoration: none;
+            margin: 0px 10px;
+            transition: color 1s ease-in;
+        }
+
+        header a:hover {
+            text-decoration: none;
+            color: rgb(88, 164, 240);
+            font-weight: 700;
+        }
+
+        /*Contenedor de ¿Quien soy yo?*/
+        .contenedor {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            padding-top: 80px; /* Ajustar el padding para evitar que el contenido quede oculto detrás del header */
+        }
+
+        .contenedor img {
+            margin-top: 70px;
+            width: 100%;
+            max-width: 550px;
+            margin-left: 100px;
+            border-radius: 20px;
+        }
+
+        .textos {
+            margin-left: 70px;
+            max-width: 600px;
+        }
+
+        .textos h1 {
+            text-align: left;
+            color: orangered;
+            font-size: 60px;
+        }
+
+        .textos p {
+            padding-right: 100px;
+            text-align: left;
+            font-size: 20px;
+            line-height: 1.0;
+            margin: 20px 0px;
+            padding-bottom: 10px;
+        }
+
+        .textos a {
+            font-size: 25px;
+            padding: 10px 20px;
+            margin: 10px 0px;
+            text-decoration: none;
+            border: 1px solid black;
+            border-radius: 5px;
+            background-color: orangered;
+            color: white;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.7);
+            transition: color 1s ease-in;
+        }
+
+        .textos a:hover {
+            cursor: pointer;
+            color: black;
+        }
+
+        /*Contenedor 2 de ¿Quien soy yo? */
+        .contenedor2 {
+            background-color: orangered;
+            text-align: center;
+            padding: 20px 0px;
+        }
+
+        .contenedor2 img {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+
+        .contenedor2 p {
+            margin: 0px 120px;
+            text-align: center;
+            font-size: 30px;
+            color: white;
+        }
+
+        .contenedor2 .name {
+            font-size: 20px;
+            font-style: oblique;
+            color: white;
+        }
+
+        /*Div del titulo de proyectos*/
+        .tituloProyectos {
+            color: rgb(56, 56, 56);
+            display: flex;
+            justify-content: center;
+            margin: 30px 0px;
+            font-size: 30px;
+        }
+
+        /*Div de las cards de proyectos*/
+        .proyectos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .cardProyecto {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 300px;
+            margin-bottom: 20px;
+            text-align: center;
+            border-radius: 10px;
+            border: 1px solid black;
+            padding-bottom: 30px;
+            transition: transform 0.3s, box-shadow 0.5s;
+        }
+
+        .cardProyecto:hover {
+            transform: scale(1.02);
+            box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.7);
+        }
+
+        .cardProyecto img {
+            border-radius: 10px 10px 0px 0px;
+            width: 100%;
+        }
+
+        .cardProyecto h2 {
+            margin: 10px 0px;
+        }
+
+        .cardProyecto p {
+            padding: 0px 10px;
+            margin: 0px 0px 30px 0px;
+        }
+
+        .cardProyecto a {
+            border: 1px solid black;
+            border-radius: 10px;
+            padding: 10px;
+            text-decoration: none;
+            background-color: orangered;
+            color: white;
+            align-self: center;
+        }
+
+        .cardProyecto a:hover {
+            font-weight: 700;
+            color: rgba(0, 0, 0, 0.8);
+        }
+
+        /*Pie de pagina*/
+        footer {
+            width: 100%;
+            padding: 20px 0px;
+            background-color: rgb(46, 45, 45);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        footer p {
+            margin: 0;
+            text-align: center;
+        }
+
+        /* Menú hamburguesa para móviles */
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            font-size: 24px;
+            position: absolute;
+            right: 20px;
+            top: 15px;
+            z-index: 1000;
+            transition: transform 0.3s ease;
+        }
+        
+        .menu-toggle.active i {
+            transform: rotate(90deg);
+        }
+        
+        #mainNav {
+            transition: all 0.3s ease;
+        }
+
+        /* Estilos para tablets */
+        @media screen and (max-width: 1024px) {
+            header h2 {
+                margin-left: 50px;
+            }
+
+            nav {
+                margin-right: 50px;
+            }
+
+            .contenedor img {
+                margin-left: 30px;
+                max-width: 450px;
+            }
+
+            .textos {
+                margin-left: 30px;
+            }
+
+            .textos h1 {
+                font-size: 50px;
+            }
+
+            .textos p {
+                padding-right: 30px;
+            }
+
+            .contenedor2 p {
+                margin: 0 60px;
+                font-size: 24px;
+            }
+
+            .proyectos {
+                padding: 0 20px;
+            }
+        }
+
+        /* Estilos para móviles */
+        @media screen and (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: center;
+                padding: 10px;
+                position: relative;
+            }
+
+            header h2 {
+                margin-left: 0;
+                margin-bottom: 10px;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            #mainNav {
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background-color: rgba(46, 45, 45, 0.95);
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 0;
+                max-height: 0;
+                overflow: hidden;
+                z-index: 999;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+            }
+
+            #mainNav.active {
+                max-height: 300px;
+                padding: 15px 0;
+            }
+
+            #mainNav a {
+                margin: 10px 0;
+                font-size: 18px;
+                opacity: 0.9;
+                transition: all 0.3s ease;
+            }
+
+            #mainNav a:hover {
+                opacity: 1;
+                transform: scale(1.05);
+            }
+
+            nav {
+                margin-right: 0;
+            }
+
+            .contenedor {
+                flex-direction: column;
+                padding-top: 100px;
+            }
+
+            .contenedor img {
+                margin-left: 0;
+                margin-top: 20px;
+                max-width: 90%;
+                border-radius: 15px;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+                transition: transform 0.3s ease;
+            }
+
+            .contenedor img:hover {
+                transform: scale(1.02);
+            }
+
+            .textos {
+                margin-left: 0;
+                padding: 0 20px;
+                text-align: center;
+            }
+
+            .textos h1 {
+                font-size: 40px;
+                text-align: center;
+                margin-top: 20px;
+            }
+
+            .textos p {
+                padding-right: 0;
+                font-size: 18px;
+                text-align: center;
+                line-height: 1.4;
+            }
+
+            .textos a {
+                font-size: 20px;
+                display: inline-block;
+                margin-top: 15px;
+                transition: transform 0.3s ease, background-color 0.3s ease;
+            }
+
+            .textos a:hover {
+                transform: translateY(-3px);
+                background-color: #ff5722;
+            }
+
+            .contenedor2 img {
+                max-width: 200px;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            }
+
+            .contenedor2 p {
+                margin: 0 20px;
+                font-size: 18px;
+            }
+
+            .tituloProyectos h1 {
+                font-size: 32px;
+            }
+
+            .proyectos {
+                grid-template-columns: 1fr;
+                justify-items: center;
+                padding: 0 15px;
+            }
+
+            .cardProyecto {
+                max-width: 90%;
+            }
+        }
+
+        /* Estilos para móviles pequeños */
+        @media screen and (max-width: 480px) {
+            header {
+                padding: 10px 0;
+            }
+
+            header h2 {
+                font-size: 20px;
+            }
+
+            header a {
+                font-size: 14px;
+                margin: 0 5px;
+            }
+
+            .contenedor {
+                padding-top: 80px;
+            }
+
+            .textos h1 {
+                font-size: 32px;
+            }
+
+            .textos p {
+                font-size: 16px;
+            }
+
+            .textos a {
+                font-size: 16px;
+                padding: 8px 16px;
+            }
+
+            .contenedor2 img {
+                max-width: 150px;
+            }
+
+            .contenedor2 p {
+                font-size: 16px;
+                margin: 0 15px;
+            }
+
+            .contenedor2 .name {
+                font-size: 16px;
+            }
+
+            .tituloProyectos h1 {
+                font-size: 28px;
+            }
+
+            .cardProyecto h2 {
+                font-size: 18px;
+            }
+
+            .cardProyecto p {
+                font-size: 14px;
+            }
+
+            .cardProyecto a {
+                font-size: 14px;
+                padding: 8px 16px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <h2><strong>Juliana</strong> Sanabria</h2>
+        <div class="menu-toggle" id="menuToggle">
+            <i>☰</i>
+        </div>
+        <nav id="mainNav">
+            <a href="#">Inicio</a>
+            <a href="#">¿Quién soy?</a>
+            <a href="#">Mis proyectos</a>
+        </nav>
+    </header>
+
+    <div class="contenedor">
+        <img src="https://www.yunbitsoftware.com/blog/wp-content/uploads/2017/01/07-1-e1483971439300.jpg" alt="">
+        <div class="textos">
+            <h1>¿Quién Soy?</h1>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolor, cum dolore sed vero ut, repellat
+                quidem est facere nesciunt et nostrum optio sapiente non omnis quasi temporibus soluta consectetur eos?</p>
+            <a href="#">Leer más</a>
+        </div>
+    </div>
+
+    <div class="contenedor2">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSs2r2srADW979YUH2VGf2AVOenbR1RtzwRmoAFB3AOweyySn3U" alt="">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, doloribus? Voluptatum impedit dolor debitis,
+            corporis minima aliquid natus enim. Dolor soluta ratione quis laborum doloribus neque voluptate necessitatibus
+            possimus perspiciatis.</p><br>
+        <p class="name">- Juliana Sanabria</p>
+    </div>
+
+    <div class="tituloProyectos">
+        <h1>Mis proyectos</h1>
+    </div>
+
+    <div class="proyectos">
+        <div class="cardProyecto">
+            <img src="https://beamaker.jp/assets/headimg/javascript.svg" alt="">
+            <h2>JavaScript</h2>
+            <p>Lenguaje de programación usado principalmente en el desarrollo web para agregar interactividad y dinamismo a las páginas.</p>
+            <a href="#">Ver proyecto</a>
+        </div>
+
+        <div class="cardProyecto">
+            <img src="https://i.blogs.es/d39da2/python/840_560.jpeg" alt="">
+            <h2>Python</h2>
+            <p>Lenguaje versátil, fácil de aprender y muy utilizado en áreas como inteligencia artificial, análisis de datos y desarrollo web.</p>
+            <a href="#">Ver proyecto</a>
+        </div>
+
+        <div class="cardProyecto">
+            <img src="https://i.ytimg.com/vi/rr2H086z16s/hq720.jpg" alt="">
+            <h2>HTML y CSS</h2>
+            <p>HTML estructura el contenido y CSS define su diseño visual, juntos crean la base y estilo de los sitios web.</p>
+            <a href="#">Ver proyecto</a>
+        </div>
+
+        <div class="cardProyecto">
+            <img src="https://www.aauniv.com/s/blog/wp-content/uploads/2021/12/que-hace-un-ingeniero-de-sistemas-1280x720.jpg" alt="">
+            <h2>Ingeniero de Sistemas</h2>
+            <p>Diseña, desarrolla y gestiona soluciones tecnológicas para optimizar procesos y resolver problemas.</p>
+            <a href="#">Ver proyecto</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>Copyright © 2024. Todos los derechos reservados. Juliana Sanabria</p>
+    </footer>
+
+    <script>
+        // Script para el menú hamburguesa en dispositivos móviles
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.getElementById('menuToggle');
+            const mainNav = document.getElementById('mainNav');
+            
+            // Función para manejar el menú en dispositivos móviles
+            menuToggle.addEventListener('click', function() {
+                mainNav.classList.toggle('active');
+                menuToggle.classList.toggle('active');
+            });
+
+            // Cerrar menú al hacer clic en un enlace
+            const navLinks = document.querySelectorAll('#mainNav a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    if (window.innerWidth <= 768) {
+                        mainNav.classList.remove('active');
+                        menuToggle.classList.remove('active');
+                    }
+                });
+            });
+
+            // Ajustar menú al cambiar tamaño de ventana
+            window.addEventListener('resize', function() {
+                if (window.innerWidth > 768) {
+                    mainNav.classList.remove('active');
+                    menuToggle.classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
