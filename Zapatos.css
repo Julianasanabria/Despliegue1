@@ -10,6 +10,15 @@ body {
     line-height: 1.6;
     color: #333;
 }
+.menu-toggle {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #ffffff;
+    cursor: pointer;
+    display: block;
+    margin-right: auto;
+}
 
 /* Navigation */
 .navbar {
@@ -19,6 +28,14 @@ body {
     padding: 1rem 5%;
     background: rgba(0, 0, 0);
     color: white;
+    position: relative;
+}
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Asegura que los elementos estén separados */
+    gap: 0.5rem;
+    width: 100%; /* Asegura que ocupe todo el espacio disponible */
 }
 
 .logo a {
@@ -68,6 +85,7 @@ body {
     text-align: center;
     border-radius: 0 0 100px 100px;
     overflow: hidden;
+    clip-path: ellipse(60% 70% at 50% 0%);
 }
 
 .hero-content {
@@ -437,6 +455,9 @@ body {
 }
 
 @media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
     .hero {
         height: 50vh;
     }
