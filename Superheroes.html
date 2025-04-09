@@ -44,7 +44,8 @@
             padding: 10px 20px;
             display: flex;
             flex-direction: column;
-            flex-grow: 1;
+            flex-grow: 1; /* Permite que el contenido ocupe el espacio restante */
+            overflow-y: auto; /* Agrega scroll si el contenido excede el espacio */
             overflow-wrap: break-word; /* Permite que el texto se ajuste a la tarjeta */
         }
 
@@ -55,8 +56,8 @@
 
         img {
             width: 100%;
-            height: 200px; 
-            object-fit: cover; 
+            height: 250px; /* Ajusta la altura de las imágenes */
+            object-fit: cover; /* Asegura que las imágenes se vean completas */
             border-radius: 10px 10px 0px 0px;
         }
 
@@ -74,7 +75,7 @@
 <body>
     <div class="container">
         <div class="superhero-card">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2U-wszbgbeaejqPcolx2B-LjpGHl1qa-iEQ&s" alt="Imagen de Blossom">
+            <img src="https://wallpapers.com/images/hd/powerpuff-girl-blossom-character-r6susv3wi3vhdr37.jpg" alt="Imagen de Blossom">
             <div class="content">
                 <h2>Blossom</h2>
                 <h3>Habilidades</h3>
@@ -134,7 +135,7 @@
             </div>
         </div>
         <div class="superhero-card">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKAZaYhdZ8aW9beU69DzriyLYPDPjyWGzQLA&s" alt="Imagen de Batman">
+            <img src="https://img2.rtve.es/n/2333755" alt="Imagen de Batman">
             <div class="content">
                 <h2>Batman</h2>
                 <h3>Habilidades</h3>
@@ -158,7 +159,7 @@
             </div>
         </div>
         <div class="superhero-card">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQh-bb76zMX0HMJz2lbSy9NCTR1EiGgkjjo-A&s" alt="Imagen de Thanos">
+            <img src="https://i.ytimg.com/vi/L33PqfYpngY/maxresdefault.jpg?sqp=-oaymwEmCIAKENAF8quKqQMa8AEB-AHUBoAC4AOKAgwIABABGEcgVihyMA8=&rs=AOn4CLDL8zGGE9IDDN6f3Gfg4sOM_vDc-g" alt="Imagen de Thanos">
             <div class="content">
                 <h2>Thanos</h2>
                 <h3>Habilidades</h3>
@@ -180,7 +181,7 @@
             </div>
         </div>
         <div class="superhero-card">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9WWsvzoi7pqMgqaW9Zi7g8e2nGFr_0WsjWA&s" alt="Imagen de Wonder Woman">
+            <img src="https://xploramusica.com/wp-content/uploads/2024/05/Screen-Shot-2023-08-10-at-3.43.28-PM.png" alt="Imagen de Wonder Woman">
             <div class="content">
                 <h2>Wonder Woman</h2>
                 <h3>Habilidades</h3>
@@ -200,6 +201,66 @@
                     <li>Mortalidad humana pese a mejoras físicas</li>
                     <li>Confianza excesiva en sus habilidades</li>
                     <li>Limitaciones frente a tecnología avanzada</li>
+                </ul>
+            </div>
+        </div>
+        <div class="superhero-card">
+            <img src="https://lumiere-a.akamaihd.net/v1/images/ebo_ironman2_sp_da36dda0.jpeg?region=128,0,768,768" alt="Imagen de Iron Man">
+            <div class="content">
+                <h2>Iron Man</h2>
+                <h3>Habilidades</h3>
+                <ul>
+                    <li>Intelecto de nivel genio</li>
+                    <li>Uso de armaduras avanzadas</li>
+                    <li>Capacidad de vuelo</li>
+                    <li>Armas de alta tecnología</li>
+                    <li>Habilidades de ingeniería</li>
+                </ul>
+                <h3>Debilidades</h3>
+                <ul>
+                    <li>Dependencia de su armadura</li>
+                    <li>Problemas de salud</li>
+                    <li>Vulnerabilidad emocional</li>
+                </ul>
+            </div>
+        </div>
+        <div class="superhero-card">
+            <img src="https://musicart.xboxlive.com/7/7dbf5000-0000-0000-0000-000000000002/504/image.jpg" alt="Imagen de Spider-Man">
+            <div class="content">
+                <h2>Spider-Man</h2>
+                <h3>Habilidades</h3>
+                <ul>
+                    <li>Fuerza sobrehumana</li>
+                    <li>Reflejos mejorados</li>
+                    <li>Capacidad de trepar paredes</li>
+                    <li>Sentido arácnido</li>
+                    <li>Habilidades de combate</li>
+                </ul>
+                <h3>Debilidades</h3>
+                <ul>
+                    <li>Vulnerabilidad emocional</li>
+                    <li>Falta de experiencia</li>
+                    <li>Dependencia de su sentido arácnido</li>
+                </ul>
+            </div>
+        </div>
+        <div class="superhero-card">
+            <img src="https://images.squarespace-cdn.com/content/v1/59d7e2c7e45a7c0ce235bb55/1552087259276-4LW2T3EC4IEQYOEGCXST/CaptainMarvel.jpg" alt="Imagen de Captain Marvel">
+            <div class="content">
+                <h2>Captain Marvel</h2>
+                <h3>Habilidades</h3>
+                <ul>
+                    <li>Fuerza sobrehumana</li>
+                    <li>Vuelo</li>
+                    <li>Proyección de energía</li>
+                    <li>Resistencia extrema</li>
+                    <li>Habilidades de combate</li>
+                </ul>
+                <h3>Debilidades</h3>
+                <ul>
+                    <li>Confianza excesiva</li>
+                    <li>Vulnerabilidad a ataques mágicos</li>
+                    <li>Dependencia de su energía cósmica</li>
                 </ul>
             </div>
         </div>

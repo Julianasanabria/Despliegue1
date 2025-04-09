@@ -14,113 +14,282 @@ body {
     background: none;
     border: none;
     font-size: 1.5rem;
-    color: #ffffff;
+    color: #fff; /* Cambia todos los textos e íconos a blanco */
     cursor: pointer;
     display: block;
     margin-right: auto;
 }
 
 /* Navigation */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 5%;
-    background: rgba(0, 0, 0);
-    color: white;
-    position: relative;
+.navegacion {
+    background: #000; /* Fondo negro */
+    color: #fff; /* Texto en blanco */
+    display: flex; /* Cambia a flexbox para mayor control */
+    justify-content: space-between; /* Espacia los elementos */
+    align-items: center; /* Alinea verticalmente */
+    padding: 0.8rem 3%;
+    position: fixed; /* Fija la barra superior */
+    top: 0;
+    width: 100%; /* Asegura que ocupe el 100% del ancho */
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra ligera */
 }
+
+/* Estilos para las 4 partes de la navegación */
+.parte-navegacion {
+    display: flex;
+    align-items: center;
+    gap: 1rem; /* Espaciado entre elementos */
+}
+
+/* Parte 1: Menú y Constructor */
+.part-1 {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    justify-self: start;
+}
+
 .logo {
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Asegura que los elementos estén separados */
     gap: 0.5rem;
-    width: 100%; /* Asegura que ocupe todo el espacio disponible */
+    font-weight: 500;
 }
 
 .logo a {
     text-decoration: none;
-    color: white;
-    font-size: 1.5rem;
+    color: #fff; /* Cambia el texto de "Constructor" a blanco */
+    font-size: 1.2rem;
     font-weight: bold;
 }
 
-.nav-links {
+/* Parte 2: Enlaces de navegación */
+.part-2 {
+    display: flex;
+    justify-content: center;
+    justify-self: center;
+}
+
+.enlaces-navegacion {
     display: flex;
     list-style: none;
-    gap: 2rem;
+    gap: 1.5rem; /* Espaciado entre enlaces */
+    margin: 0;
+    padding: 0;
 }
 
-.nav-links a {
+.enlaces-navegacion a {
     text-decoration: none;
-    color: white;
+    color: #fff; /* Texto en blanco */
+    font-size: 1rem;
     font-weight: 500;
+    transition: color 0.3s ease;
 }
 
-.nav-actions {
+.enlaces-navegacion a:hover {
+    color: #007bff; /* Color azul al pasar el cursor */
+}
+
+/* Parte 3: Búsqueda */
+.part-3 {
     display: flex;
-    gap: 1rem;
+    align-items: center;
+    justify-self: start;
+    margin-right: 10rem; /* Ajusta el margen para moverlo más hacia la izquierda */
 }
 
-.nav-actions button {
+.search-container {
+    display: flex;
+    align-items: center;
+    background: #fff; /* Fondo blanco */
+    border-radius: 20px;
+    padding: 0 10px;
+    height: 35px;
+    max-width: 250px; /* Limita el ancho máximo */
+    width: 100%;
+}
+
+.search-input {
+    border: none;
+    background: transparent;
+    outline: none;
+    padding: 5px;
+    font-size: 14px;
+    flex: 1; /* Ocupa el espacio disponible */
+    color: #333; /* Texto oscuro */
+}
+
+.search-input::placeholder {
+    color: rgba(0, 0, 0, 0.7); /* Placeholder en negro */
+}
+
+.search-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: #333; /* Ícono oscuro */
+}
+
+/* Parte 4: Cuenta y Bolsa */
+.part-4 {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem; /* Incrementa ligeramente el espacio entre los botones */
+}
+
+.part-4 button {
     background: none;
     border: none;
     cursor: pointer;
     font-size: 0.9rem;
+    color: #fff; /* Cambia todos los textos e íconos a blanco */
+    position: relative;
+}
+
+.boton-cuenta, .boton-carrito {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: #fff; /* Íconos en blanco */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: auto; /* Ajusta el ancho automáticamente */
+    height: 40px; /* Mantiene la altura consistente */
+    padding: 0 10px; /* Agrega espacio interno para los botones */
+    border-radius: 20px; /* Botones ligeramente redondeados */
+    transition: background 0.3s ease;
+}
+
+.boton-cuenta:hover, .boton-carrito:hover {
+    background: rgba(255, 255, 255, 0.2); /* Fondo al pasar el cursor */
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    background: #fff; /* Fondo blanco para el campo de búsqueda */
+    border-radius: 20px;
+    padding: 0 15px;
+    height: 35px;
+    color: #000; /* Texto negro dentro del campo */
+    width: 100%; /* Ajusta el ancho en pantallas pequeñas */
+    max-width: 300px; /* Limita el ancho máximo */
+}
+
+.search-input {
+    border: none;
+    background: transparent;
+    outline: none;
+    padding: 5px;
+    font-size: 14px;
+    width: 100px;
     color: white;
 }
 
+.search-input::placeholder {
+    color: rgba(0, 0, 0, 0.7); /* Placeholder en negro */
+}
+
+.search-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin-right: 5px;
+}
+
+.search-btn::before {
+    content: '🔍';
+    font-size: 16px;
+    color: white;
+}
+
+.account-btn {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.account-btn::before {
+    content: '👤';
+    font-size: 16px;
+    color: #333;
+}
+
+.account-btn::after {
+    content: 'Account';
+    font-size: 14px;
+    color: #fff; /* Cambia el texto a blanco */
+}
+
+.cart-btn {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.cart-btn::before {
+    content: '🛒';
+    font-size: 16px;
+    color: #333;
+}
+
+.cart-btn::after {
+    content: 'Bag';
+    font-size: 14px;
+    color: #fff; /* Cambia el texto a blanco */
+}
+
 /* Hero Section */
-.hero {
+.heroe {
     position: relative;
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.2));
-    background-size: cover;
-    background-position: center;
-    height: 60vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2)), url('https://acdn.mitiendanube.com/stores/001/160/313/products/9dcfaf1e-c2a2c072b742b8ac5815904858531815-1024-1024.jpeg') no-repeat center center;
+    background-size: cover; /* Asegura que la imagen ocupe todo el contenedor */
+    height: 70vh; /* Altura ajustada */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     color: white;
     text-align: center;
-    border-radius: 0 0 100px 100px;
-    overflow: hidden;
-    clip-path: ellipse(60% 70% at 50% 0%);
+    filter: brightness(0.9); /* Mejora la visibilidad del texto sobre la imagen */
+}
+
+.imagen-heroe {
+    display: none; /* Oculta la etiqueta <img> ya que el fondo se maneja con CSS */
 }
 
 .hero-content {
     position: relative;
     z-index: 1;
-}
-
-.hero-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1;
+    text-align: center;
+    padding: 1rem;
 }
 
 .hero h1 {
-    font-size: 3.5rem;
-    margin-bottom: 1.5rem;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
 }
 
-.shop-now {
-    background: white;
-    color: #333;
-    padding: 1rem 2rem;
+.boton-comprar {
+    background: #007bff;
+    color: white;
+    padding: 0.8rem 2rem;
     border: none;
     border-radius: 25px;
     font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
-    transition: transform 0.2s;
+    transition: background 0.3s ease, transform 0.2s ease;
 }
 
-.shop-now:hover {
+.boton-comprar:hover {
+    background: #0056b3;
     transform: scale(1.05);
 }
 
@@ -134,30 +303,60 @@ body {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 2rem;
+    flex-wrap: wrap; /* Ajusta los filtros en pantallas pequeñas */
+    gap: 1rem;
 }
 
 .filter-options {
     display: flex;
     gap: 1rem;
+    align-items: center;
+    flex-wrap: wrap; /* Ajusta los botones en pantallas pequeñas */
+}
+
+.mail-option {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #666;
+    cursor: pointer;
+}
+
+.mail-option .mail-icon::before {
+    content: '📧';
+    font-size: 16px;
+}
+
+.mail-option .arrow-icon::before {
+    content: '→';
+    font-size: 16px;
 }
 
 .filter-btn {
-    background: none;
-    border: none;
+    background: #f8f8f8;
+    border: 1px solid #ddd;
     padding: 0.5rem 1rem;
     cursor: pointer;
-    color: #666;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border-radius: 5px;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.filter-btn:hover {
+    background: #007bff;
+    color: white;
 }
 
 .filter-btn.active {
-    color: #000;
+    color: #000000; /* Asegura que el texto activo también sea blanco */
     font-weight: 600;
 }
 
 /* Product Container */
 .product-container {
     display: grid;
-    grid-template-columns: 300px 1fr;
+    grid-template-columns: 300px 1fr; /* Mantiene la barra de filtros y productos en pantallas grandes */
     gap: 2rem;
 }
 
@@ -168,6 +367,14 @@ body {
     border-radius: 10px;
     height: 100%;
     min-height: calc(100vh - 400px);
+    display: block; /* Visible por defecto */
+}
+
+@media (max-width: 1024px) {
+    .filters {
+        display: block; /* Muestra las categorías en tabletas */
+        margin-bottom: 1rem;
+    }
 }
 
 .filter-group {
@@ -217,6 +424,57 @@ body {
 
 .radio-item input[type="radio"]:checked {
     border-color: #000;
+}
+
+/* Mostrar las imágenes completas sin recortar */
+.product-card {
+    position: relative; /* Necesario para posicionar el carrito */
+    background: white;
+    border-radius: 10px;
+    padding: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    width: 100%; /* Asegura que las tarjetas ocupen el ancho disponible */
+}
+
+.product-card img {
+    width: 100%; /* Ocupa todo el ancho del contenedor */
+    height: 200px; /* Altura aumentada para imágenes más largas */
+    border-radius: 8px; /* Mantiene bordes redondeados */
+    margin-bottom: 0.3rem; /* Espacio reducido entre la imagen y el texto */
+    display: block; /* Asegura que la imagen se muestre como bloque */
+    object-fit: contain; /* Mantiene la proporción de la imagen */
+    margin: 0;
+}
+
+.image-container {
+    position: relative; /* Necesario para posicionar el carrito dentro de la imagen */
+}
+
+.cart-icon {
+    position: absolute;
+    bottom: 10px; /* Posiciona el carrito en la parte inferior */
+    right: 10px; /* Posiciona el carrito en la parte derecha */
+    background-color: white;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.cart-icon:hover {
+    transform: scale(1.1); /* Efecto de zoom al pasar el cursor */
+    background-color: #f0f0f0; /* Cambia el fondo al pasar el cursor */
 }
 
 .radio-item input[type="radio"]:checked::after {
@@ -285,172 +543,174 @@ body {
 /* Product Grid */
 .product-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-    align-items: stretch;
+    grid-template-columns: repeat(3, 1fr); /* Tres columnas en pantallas grandes */
+    gap: 1.5rem; /* Espaciado entre tarjetas */
+    justify-items: stretch; /* Asegura que las tarjetas ocupen todo el espacio horizontal */
 }
 
 .product-card {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    text-align: center;
     background: white;
     border-radius: 10px;
     padding: 1rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s ease;
-    height: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    width: 100%; /* Asegura que las tarjetas ocupen el ancho disponible */
 }
 
 .product-card img {
     width: 100%;
     height: 200px;
-    object-fit: cover;
+    object-fit: contain;
     border-radius: 8px;
     margin-bottom: 1rem;
 }
 
-.product-card h3 {
-    font-size: 1.1rem;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 0.5rem;
-}
-
-.product-card p {
-    font-size: 0.9rem;
-    color: #666;
-    margin-bottom: 0.5rem;
-}
-
-.product-card .price {
-    font-size: 1rem;
-    font-weight: bold;
-    color: #000;
-    margin-bottom: 1rem;
-}
-
-.add-to-cart {
-    width: 100%;
-    padding: 0.8rem;
-    background: #000;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.2s ease;
-}
-
-.add-to-cart:hover {
-    background: #333;
-}
-
-.product-card:hover {
-    transform: translateY(-5px);
-}
-
-/* Footer */
-.footer-content {
-    background: #f8f8f8;
-    padding: 3rem 5%;
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 2rem;
-}
-
-.footer-links {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
-}
-
-.link-group {
+.cart-icon {
+    position: absolute;
+    bottom: 15px; /* Ajusta la posición inferior */
+    right: 15px; /* Ajusta la posición derecha */
+    background-color: white;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
     display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-.link-group a {
-    text-decoration: none;
-    color: #666;
-}
-
-.company-info h3 {
-    margin-bottom: 1rem;
-}
-
-.footer-bottom {
-    background: #f0f0f0;
-    padding: 1.5rem 5%;
-    display: flex;
-    justify-content: space-between;
     align-items: center;
-}
-
-.legal-links {
-    display: flex;
-    gap: 2rem;
-}
-
-.legal-links a {
-    text-decoration: none;
-    color: #666;
-    font-size: 0.9rem;
-}
-
-.newsletter {
-    display: flex;
-    gap: 0.5rem;
-}
-
-.newsletter input {
-    padding: 0.5rem 1rem;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-}
-
-.newsletter button {
-    background: #000;
-    color: white;
-    border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.3s ease;
 }
 
-/* Responsive Design */
+.cart-icon:hover {
+    transform: scale(1.1); /* Efecto de zoom al pasar el cursor */
+    background-color: #f0f0f0; /* Cambia el fondo al pasar el cursor */
+}
+
 @media (max-width: 1024px) {
-    .navbar {
-        flex-direction: column;
-        gap: 1rem;
-    }
-
-    .nav-links {
-        flex-direction: column;
-        gap: 1rem;
-    }
-
-    .hero h1 {
-        font-size: 2.5rem;
-    }
-
-    .shop-now {
-        padding: 0.8rem 1.5rem;
-        font-size: 0.9rem;
-    }
-
     .product-container {
-        grid-template-columns: 1fr;
-    }
-
-    .product-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr; /* Oculta la barra de filtros en pantallas medianas */
     }
 
     .filters {
-        display: none;
+        display: block; /* Muestra las categorías en tabletas */
+        margin-bottom: 1rem;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr); /* Dos columnas en pantallas medianas */
+        gap: 1rem; /* Reduce el espaciado entre tarjetas */
+    }
+}
+
+@media (max-width: 768px) {
+    .product-container {
+        grid-template-columns: 1fr; /* Solo muestra los productos en pantallas pequeñas */
+    }
+
+    .filters {
+        display: none; /* Oculta las categorías en pantallas pequeñas */
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
+        gap: 1rem; /* Reduce el espaciado entre tarjetas */
+    }
+
+    .product-card {
+        margin: 0 auto; /* Centra las tarjetas en pantallas pequeñas */
+    }
+}
+
+@media (max-width: 480px) {
+    .navegacion {
+        padding: 0.5rem 1rem; /* Reduce el padding de la barra superior */
+    }
+
+    .parte-1, .parte-3 {
+        display: flex; /* Mantiene visibles el logo y la barra de búsqueda */
+    }
+
+    .parte-2, .parte-4 {
+        display: none; /* Oculta los enlaces de navegación y los botones de cuenta y carrito */
+    }
+
+    .menu-toggle {
+        font-size: 1.2rem; /* Reduce el tamaño del ícono del menú */
+    }
+
+    .logo a {
+        font-size: 1rem; /* Reduce el tamaño del texto del logo */
+    }
+
+    .contenedor-busqueda {
+        max-width: 100%; /* Asegura que la barra de búsqueda ocupe todo el ancho disponible */
+    }
+
+    .entrada-busqueda {
+        font-size: 0.9rem; /* Reduce el tamaño del texto en la barra de búsqueda */
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr; /* Una columna en celulares */
+        gap: 0.5rem; /* Reduce aún más el espaciado entre tarjetas */
+    }
+
+    .product-card {
+        padding: 0.8rem; /* Reduce el padding en tarjetas */
+    }
+
+    .heroe {
+        height: 50vh; /* Reduce la altura del héroe en celulares */
+    }
+
+    .hero h1 {
+        font-size: 1.8rem; /* Ajusta el tamaño del texto */
+    }
+
+    .boton-comprar {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    .navegacion {
+        padding: 0.5rem 1rem; /* Reduce el padding de la barra superior */
+    }
+
+    .menu-toggle {
+        font-size: 1.2rem; /* Reduce el tamaño del ícono del menú */
+    }
+
+    .logo a {
+        font-size: 1rem; /* Reduce el tamaño del texto del logo */
+    }
+
+    .enlaces-navegacion {
+        gap: 0.8rem; /* Reduce el espacio entre los enlaces */
+    }
+
+    .enlaces-navegacion a {
+        font-size: 0.9rem; /* Reduce el tamaño del texto de los enlaces */
+    }
+
+    .parte-4 {
+        gap: 0.8rem; /* Reduce el espacio entre los botones */
+    }
+
+    .boton-cuenta, .boton-carrito {
+        font-size: 1rem; /* Reduce el tamaño de los íconos */
+        height: 35px; /* Reduce la altura de los botones */
+        padding: 0 8px; /* Reduce el padding interno */
+    }
+}
+
+@media (max-width: 1024px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr); /* Dos columnas en pantallas medianas */
     }
 }
 
@@ -458,7 +718,25 @@ body {
     .menu-toggle {
         display: block;
     }
-    .hero {
+    .navegacion {
+        padding: 1rem;
+    }
+    .enlaces-navegacion {
+        flex-direction: column; /* Cambia los enlaces a una columna */
+        gap: 1rem;
+    }
+
+    .part-4 {
+        flex-direction: column; /* Cambia los elementos de la parte 4 a una columna */
+        gap: 1rem;
+    }
+
+    .mail-container {
+        flex-direction: column; /* Cambia "Your Mail" a una columna */
+        align-items: center;
+    }
+
+    .heroe {
         height: 50vh;
     }
 
@@ -466,46 +744,78 @@ body {
         font-size: 2rem;
     }
 
-    .shop-now {
-        padding: 0.6rem 1rem;
-        font-size: 0.8rem;
+    .boton-comprar {
+        padding: 0.6rem 1.5rem;
+        font-size: 0.9rem;
     }
 
     .product-grid {
         grid-template-columns: 1fr;
     }
 
-    .footer-content {
-        grid-template-columns: 1fr;
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
     }
 
-    .footer-links {
-        grid-template-columns: 1fr;
+    .footer-bottom {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 772px) and (min-width: 546px) {
+    .parte-2 {
+        display: none; /* Oculta los enlaces de navegación */
     }
 }
 
 @media (max-width: 480px) {
-    .navbar {
+    .navegacion {
         padding: 1rem;
+    }
+
+    .enlaces-navegacion {
+        flex-direction: column; /* Mantiene los enlaces en columna */
+        gap: 1rem;
+    }
+
+    .part-4 {
+        flex-direction: column; /* Mantiene los elementos de la parte 4 en columna */
+        gap: 1rem;
+    }
+
+    .mail-container {
+        flex-direction: column; /* Mantiene "Your Mail" en columna */
+        align-items: center;
     }
 
     .hero h1 {
         font-size: 1.5rem;
     }
 
-    .shop-now {
-        padding: 0.5rem 0.8rem;
-        font-size: 0.7rem;
+    .boton-comprar {
+        padding: 0.5rem 1rem;
+        font-size: 0.8rem;
     }
 
     .filters-bar {
         flex-direction: column;
         gap: 1rem;
+        align-items: center;
     }
 
     .filter-options {
         flex-wrap: wrap;
         gap: 0.5rem;
+    }
+
+    .filters {
+        display: none; /* Oculta las categorías en pantallas muy pequeñas */
+    }
+
+    .footer-container {
+        text-align: center;
     }
 
     .footer-bottom {
@@ -516,4 +826,92 @@ body {
     .newsletter input {
         width: 100%;
     }
+}
+
+/* Footer */
+.footer {
+    background-color: #f8f9fb;
+    padding: 2rem 5%;
+    color: #5a6170;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.footer-section {
+    flex: 1 1 200px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-section ul li a {
+    color: #5a6170;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: #007bff;
+}
+
+.footer-section h4 {
+    margin-bottom: 10px;
+    color: #3a4353;
+}
+
+.footer-section.address p {
+    margin-top: 5px;
+    line-height: 1.5;
+}
+
+/* FOOTER BOTTOM */
+.footer-bottom {
+    margin-top: 2rem;
+    border-top: 1px solid #e0e0e0;
+    padding-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.footer-bottom a {
+    color: #5a6170;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-bottom a:hover {
+    color: #007bff;
+}
+
+.email-link {
+    color: #5a6170;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.email-link:hover {
+    text-decoration: underline;
+}
+
+.arrow {
+    font-size: 16px;
 }

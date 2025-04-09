@@ -23,8 +23,14 @@
 
 .contacto {
     display: flex;
-    gap: 80px;
     justify-content: flex-start; /* Alinea los elementos hacia la izquierda */
+}
+
+.contacto div span, .contacto div p {
+    word-wrap: break-word; /* Permitir que las palabras largas se ajusten */
+    max-width: 100%; /* Limitar el ancho máximo */
+    overflow-wrap: break-word; /* Ajustar palabras largas */
+    text-align: center; /* Asegurar alineación adecuada */
 }
 
 .parte1, .parte2 {
@@ -329,24 +335,35 @@ ul li::before {
         flex-direction: column;
         gap: 15px;
         text-align: center;
+        background: linear-gradient(to bottom, #8a2be2 35%, #6a0dad 35%);
     }
 
     .contacto {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
+        display: block; /* Eliminar flex y apilar elementos verticalmente */
+        text-align: center; /* Centrar el contenido */
+        gap: 0; /* Eliminar el espacio entre elementos */
+    }
+
+    .parte1, .parte2 {
+        margin-bottom: 15px; /* Espaciado entre las secciones */
+    }
+
+    .parte1 div, .parte2 div {
+        text-align: center; /* Centrar el texto */
     }
 
     .cuerpo {
         flex-direction: column;
         align-items: center;
         gap: 20px;
+        padding: 0 10px; /* Agregar padding para evitar desbordamiento */
     }
 
     .contenedor1, .contenedor2 {
         width: 100%;
         max-width: 400px;
         padding: 15px;
+        box-sizing: border-box; /* Asegurar que el padding no cause desbordamiento */
     }
 
     .personaimg {
@@ -357,6 +374,7 @@ ul li::before {
     .logos {
         justify-content: center;
         gap: 15px;
+        flex-wrap: wrap; /* Permitir que los íconos se ajusten */
     }
 
     .demos {
@@ -366,6 +384,22 @@ ul li::before {
         text-orientation: mixed;
         padding: 10px;
         justify-content: center;
+    }
+}
+
+@media screen and (max-width: 876px) {
+    .contacto {
+        display: block; /* Eliminar flex y apilar elementos verticalmente */
+        text-align: center; /* Centrar el contenido */
+        gap: 0; /* Eliminar el espacio entre elementos */
+    }
+
+    .parte1, .parte2 {
+        margin-bottom: 15px; /* Espaciado entre las secciones */
+    }
+
+    .parte1 div, .parte2 div {
+        text-align: center; /* Centrar el texto */
     }
 }
 
@@ -390,29 +424,6 @@ ul li::before {
 
     .contenedor2 {
         width: 65%;
-    }
-}
-
-@media screen and (max-width: 768px) {
-    .encabezado {
-        flex-direction: column;
-        gap: 15px;
-        background: linear-gradient(to bottom, #8a2be2 35%, #6a0dad 35%); /* Ajustar el gradiente para pantallas pequeñas */
-    }
-
-    .contacto {
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .cuerpo {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .contenedor1, .contenedor2 {
-        width: 100%;
-        max-width: 400px;
     }
 }
 
