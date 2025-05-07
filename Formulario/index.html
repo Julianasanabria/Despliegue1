@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Registro</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="alerta" class="alerta oculto"></div>
+    <div id="confirmar-eliminar" class="modal oculto">
+        <div class="modal-contenido">
+            <h3>¿Está seguro de eliminar este registro?</h3>
+            <div class="modal-botones">
+                <button id="btn-confirmar" class="btn-confirmar">Sí, eliminar</button>
+                <button id="btn-cancelar" class="btn-cancelar">Cancelar</button>
+            </div>
+        </div>
+    </div>
+    <div id="vista-tabla" class="oculto">
+        <div class="tabla-header">
+            <h2>Lista de Registros</h2>
+        </div>
+        <div class="tabla-container">
+            <table id="tabla-datos">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Nombres</th>
+                        <th>Apellidos</th>
+                        <th>Tipo Doc.</th>
+                        <th>Documento</th>
+                        <th>Email</th>
+                        <th>Fecha Nac.</th>
+                        <th>Género</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+
+    <div id="vista-formulario" class="container">
+        <h1>REGISTRARSE</h1>
+        <form id="registro-form" novalidate>
+            <div class="input-group">
+                <input type="text" id="nombres" class="form-input" placeholder="Nombres">
+                <span class="error-message"></span>
+            </div>
+            <div class="input-group">
+                <input type="text" id="apellidos" class="form-input" placeholder="Apellidos">
+                <span class="error-message"></span>
+            </div>
+            <div class="input-group">
+                <select id="opcion" class="form-input">
+                    <option value="" disabled selected class="option-placeholder">⚠️ POR FAVOR SELECCIONE TIPO DE DOCUMENTO ⚠️</option>
+                    <option value="dni">DNI</option>
+                    <option value="ti">Tarjeta de identidad</option>
+                    <option value="pasaporte">Pasaporte</option>
+                    <option value="ce">Carné de Extranjería</option>
+                </select>
+                <span class="error-message"></span>
+            </div>
+            <div class="input-group">
+                <input type="text" id="documento" class="form-input documento" placeholder="Número de documento">
+                <span class="error-message"></span>
+            </div>
+            <div class="input-group">
+                <input type="email" id="email" placeholder="Correo electrónico" class="form-input">
+                <span class="error-message"></span>
+            </div>
+            <div class="input-group">
+                <input type="date" id="fecha" placeholder="Fecha de nacimiento" class="form-input">
+                <span class="error-message"></span>
+            </div>
+            <div class="input-group">
+                <div class="genero-group">
+                    <label class="genero-label">Género:</label>
+                    <div class="radio-group">
+                        <label class="radio-label">
+                            <input type="radio" name="genero" value="masculino" class="form-input">
+                            <span class="radio-custom"></span>
+                            Masculino
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="genero" value="femenino" class="form-input">
+                            <span class="radio-custom"></span>
+                            Femenino
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="genero" value="otro" class="form-input">
+                            <span class="radio-custom"></span>
+                            Otro
+                        </label>
+                    </div>
+                </div>
+                <span class="error-message"></span>
+            </div>
+            <button type="submit">ENVIAR</button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
