@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <h1>Restaurante el perro bravo</h1>
+    <div class="modal" id="modal">
+        <div class="container">
+            <div class="form">
+                <input type="text" name="" id="nro" placeholder="nro">
+                <input type="text" name="" id="descripcion" placeholder="descripcion">
+                <input type="text" name="" id="personas" placeholder="personas">
+                <select name="estado" id="estado" value="estado">
+                    <option value="" disabled selected>Estado</option>
+                    <option value="disponible" id="disponible">disponible</option>
+                    <option value="ocupado" id="ocupado">ocupado</option>
+                    <option value="reservado" id="reservado">reservado</option>
+                </select>
+                <button id="registrar">Guardar Mesa</button>
+            </div>
+        </div>
+    </div>
+    <button id="abrir">Abrir Modal</button>
+    <input type="number" id="buscarMesa" placeholder="Buscar mesa" style="margin: 18px 0; padding: 8px 16px; border-radius: 8px; border: 1px solid #b86b2b; width: 220px;">
+
+    <div id="mesas"></div>
+    <div id="alerta"></div>
+    <div id="botonConfirmar">
+        Deseas eliminar esta grandiosa mesa?
+        <button id="confirmar">✅</button>
+        <button id="cancelar">❌</button>
+    </div>
+    <script src="script.js"></script>
+
+
+</body>
+
+</html>
