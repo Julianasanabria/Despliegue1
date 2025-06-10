@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veterinario Patitas dulces 🐶💗</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section id="inicio">
+        <h1>Veterinaria Patitas Dulces 🐶</h1>
+        <h2>ADMINISTRADOR DE CITAS</h2>
+        <div class="botones-inicio">
+            <button id="botonPrincipal"><span>Buscar</span></button>
+            <button id="agregarCita"><span>Agregar Cita</span></button>
+        </div>
+    </section>
+
+    <!-- Contenedor dinámico de cards de cita -->
+    <div id="cardsCitas"></div>
+
+    <!-- Modal 1: Agendar Cita -->
+    <div id="modalAgendarCita" class="modal">
+        <section id="agendarCita">
+            <div class="pantalla-dividida">
+                <div class="lado-izquierdo">
+                    <div class="animal-foto" id="animalFoto">
+                        <img id="fotoAnimalFormulario" src="" alt="Foto animal">
+                    </div>
+                </div>
+                <div class="lado-derecho">
+                    <div class="titulo">
+                        <label>AGENDAR CITA</label>
+                    </div>
+                    <form class="formulario">
+                        <div id="id">Factura # </div>
+                        <div>
+                            <label>Nombre de tu mascota</label>
+                            <input type="text" placeholder="Nombre de tu mascota">
+                            <label>Nombre del Propietario</label>
+                            <input type="text" placeholder="Nombre del Propietario">
+                            <label>Teléfono</label>
+                            <input type="tel" placeholder="Teléfono">
+                            <label>Fecha de la cita</label>
+                            <input type="datetime-local" id="fechaCita"/>
+                            <label>Tipo de mascota</label>
+                            <select id="tipoMascotaSelect">
+                                <option>Conejo</option>
+                                <option>Perro</option>
+                                <option>Gato</option>
+                                <option>Hamsters</option>
+                                <option>Loros</option>
+                                <option>Canarios</option>
+                                <option>Tortugas</option>
+                                <option>Serpientes</option>
+                                <option>Peces de agua dulce</option>
+                                <option>Peces de agua salada</option>
+                            </select>
+                            <label>Síntomas</label>
+                            <textarea placeholder="Síntomas"></textarea>
+                            <div class="botones">
+                                <button type="button" class="cerrar">CERRAR</button>
+                                <button type="submit" class="guardar">GUARDAR</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Modal 2: Confirmación o detalles -->
+    <div id="modalCitaInfo" class="modal">
+        <section id="infoCita">
+            <div class="icono-alerta">!</div>
+            <h2 class="titulo">Titulo</h2>
+            <p class="mensaje">Mensaje</p>
+            <button type="button" class="cerrar">Cerrar</button>
+        </section>
+    </div>
+
+    <!-- Modal 3: Búsqueda Personalizada -->
+    <div id="modalBusqueda" class="modal">
+        <section id="busquedaPersonalizada">
+            <h2 id="tituloModalBusqueda">Buscar Cita</h2>
+            <input type="text" id="inputModalBusqueda" placeholder="Escribe aquí para buscar..." style="width:90%;margin:12px 0;padding:8px;">
+            <div class="botones">
+                <button type="button" id="btnCerrarModalBusqueda" class="cerrar">Cerrar</button>
+                <button type="button" id="btnEjecutarBusquedaModal">Buscar</button>
+            </div>
+        </section>
+    </div>
+
+    <!-- Modal para Búsqueda de Citas (modificado desde busquedaCita) -->
+    <div id="modalParaBusquedaCita" class="modal">
+        <section id="busquedaCita">
+            <h2 id="tituloBusqueda">Buscar Cita</h2>
+            
+            <div class="tipo-busqueda-container" style="margin-bottom: 15px; text-align: left; padding-left: 5%; padding-right: 5%;">
+                <label style="display: block; margin-bottom: 8px; font-weight: bold;">Buscar por:</label>
+                <div style="margin-bottom: 5px;">
+                    <input type="radio" id="buscarPorMascota" name="tipoBusqueda" value="mascota" checked style="margin-right: 5px; vertical-align: middle;">
+                    <label for="buscarPorMascota" style="margin-right: 15px; vertical-align: middle;">Nombre de Mascota</label>
+                </div>
+                <div>
+                    <input type="radio" id="buscarPorPropietario" name="tipoBusqueda" value="propietario" style="margin-right: 5px; vertical-align: middle;">
+                    <label for="buscarPorPropietario" style="vertical-align: middle;">Nombre de Propietario</label>
+                </div>
+            </div>
+
+            <input type="text" id="inputBusqueda" placeholder="Escribe aquí para buscar..." style="width:90%;margin:12px auto;padding:8px;box-sizing: border-box; display: block;">
+            
+            <div class="botones">
+                <button type="button" class="cerrar">Cerrar</button>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 En proceso de hacer esa vaina</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

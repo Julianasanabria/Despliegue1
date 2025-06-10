@@ -1,0 +1,706 @@
+body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    /* background: linear-gradient(135deg, rgba(4, 0, 77, 1) 0%, rgba(4, 0, 77, 0.8) 50%, rgba(0, 0, 0, 1) 100%); */
+    color: #fff;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    padding-top: 0; /* Ajustar el contenido principal para que no quede detrás de la barra */
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    background-color: rgba(20, 20, 20, 0.7);
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    font-size: 0.95em;
+    letter-spacing: 1px;
+}
+
+#infoCita.alerta-exito {
+    background: linear-gradient(135deg, rgba(46, 204, 113, 0.9) 0%, rgba(46, 204, 113, 0.7) 50%, rgba(0, 0, 0, 0.9) 100%);
+    border: 2px solid #2ecc71;
+}
+
+#infoCita.alerta-error {
+    background: linear-gradient(135deg, rgba(231, 76, 60, 0.9) 0%, rgba(231, 76, 60, 0.7) 50%, rgba(0, 0, 0, 0.9) 100%);
+    border: 2px solid #e74c3c;
+}
+
+#infoCita.alerta-advertencia {
+    background: linear-gradient(135deg, rgba(243, 156, 18, 0.9) 0%, rgba(243, 156, 18, 0.7) 50%, rgba(0, 0, 0, 0.9) 100%);
+    border: 2px solid #f39c12;
+}
+
+#infoCita.alerta-info {
+    background: linear-gradient(135deg, rgba(52, 152, 219, 0.9) 0%, rgba(52, 152, 219, 0.7) 50%, rgba(0, 0, 0, 0.9) 100%);
+    border: 2px solid #3498db;
+}
+
+#inicio {
+    max-width: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 15px 40px;
+    background: linear-gradient(135deg, rgba(4, 0, 77, 0.98) 0%, rgba(4, 0, 77, 0.7) 50%, rgba(0, 0, 0, 0.98) 100%);
+    border-radius: 0;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.3);
+    text-align: center;
+    display: grid;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    backdrop-filter: blur(8px);
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    box-sizing: border-box;
+}
+
+#inicio h1 {
+    font-size: 1.8em;
+    font-weight: 700;
+    margin: 0;
+    letter-spacing: 2px;
+}
+
+#inicio h2 {
+    font-size: 1.2em;
+    margin: 0 20px;
+}
+
+#inicio h3 {
+    font-size: 1em;
+    margin: 0;
+    color: rgba(4, 0, 77, 0.9);
+}
+
+/* Estilos base para todos los botones */
+#inicio button {
+    align-items: center;
+    background-image: linear-gradient(144deg, rgba(4, 0, 77, 1), rgba(29, 18, 236, 0.8) 50%, rgba(0, 0, 0, 0.9));
+    border: 0;
+    border-radius: 8px;
+    box-shadow: rgba(4, 0, 77, 0.2) 0 15px 30px -5px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    display: flex;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 16px;
+    justify-content: center;
+    line-height: 1em;
+    padding: 3px;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+#inicio button span {
+    background-color: rgba(4, 0, 77, 0.95);
+    padding: 12px 20px;
+    border-radius: 6px;
+    width: 100%;
+    height: 100%;
+    transition: 300ms;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Botones centrales más grandes */
+#FiltrarNombreMascota,
+#FiltrarNombreCliente {
+    background-image: linear-gradient(144deg, rgba(4, 0, 77, 1), rgba(4, 0, 77, 1) 50%, rgba(0, 0, 0, 0.9));
+    min-width: 110px !important;
+    font-size: 15px !important;
+}
+
+#FiltrarNombreMascota span,
+#FiltrarNombreCliente span {
+    padding: 16px 24px !important;
+}
+
+/* Botones laterales más pequeños */
+#inicio button:first-child,
+#agregarCita {
+    min-width: 140px !important;
+    font-size: 14px !important;
+}
+
+/* Efectos hover */
+#inicio button:hover span {
+    background: none;
+}
+
+#inicio button:active {
+    transform: scale(0.98);
+}
+
+/* Contenedor de botones */
+.botones-inicio {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .botones-inicio {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+    
+    #inicio button {
+        min-width: 140px !important;
+        font-size: 16px !important;
+    }
+    
+    #inicio button span {
+        padding: 12px 20px !important;
+    }
+}
+
+#agregarCita {
+    float: right;
+    margin-right: 0;
+    background: #fff;
+    color: rgba(4, 0, 77, 1);
+    border: 1px solid rgba(4, 0, 77, 1);
+    font-weight: 600;
+}
+#agregarCita:hover {
+    background: rgba(4, 0, 77, 1);
+    color: #fff;
+}
+
+.pantalla-dividida {
+    display: flex;
+    height: 500px;
+    min-height: 400px;
+    background: transparent;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-top: 30px;
+    position: relative;
+    z-index: 9150;
+    box-shadow: 0 8px 32px 0 rgba(4,0,77,0.18);
+}
+
+.lado-izquierdo {
+    flex: 1.1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #000; /* Cambia a negro puro para igualar el fondo de las imágenes */
+    position: relative;
+    min-width: 220px;
+    z-index: 2;
+}
+
+.lado-derecho {
+    flex: 2;
+    background: #fff !important;
+    padding: 40px 30px;
+    flex-direction: column;
+    overflow-y: auto;
+    max-height: 500px;
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    z-index: 1;
+    position: relative;
+}
+
+.lado-derecho::before {
+    content: "";
+    position: absolute;
+    left: -40px;
+    top: 0;
+    width: 80px;
+    height: 100%;
+    background: #fff;
+    /* Simula la curva con border-radius */
+    border-top-left-radius: 200px 300px;
+    border-bottom-left-radius: 200px 300px;
+    z-index: 2;
+    pointer-events: none;
+    box-shadow: -2px 0 8px 0 rgba(0,0,0,0.08);
+}
+
+.animal-foto {
+    width: 160px;
+    height: 160px;
+    margin: 0 auto;
+    border-radius: 50%;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: none;
+    position: relative;
+    z-index: 3;
+    border: none;
+}
+
+.animal-foto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+}
+
+/* Mejorar responsividad para el formulario */
+@media (max-width: 900px) {
+    .pantalla-dividida {
+        flex-direction: column;
+        height: auto;
+        min-height: 0;
+    }
+    .lado-izquierdo, .lado-derecho {
+        min-width: 0;
+        max-width: 100%;
+        clip-path: none;
+        border-radius: 0;
+    }
+    .lado-derecho::before {
+        display: none;
+    }
+    .animal-foto {
+        margin: 30px auto 10px auto;
+    }
+    .lado-derecho {
+        padding: 20px 10px;
+        max-height: none;
+    }
+}
+
+/* Ajuste responsive */
+@media (max-width: 768px) {
+    #inicio {
+        padding: 10px 20px;
+        flex-direction: column;
+    }
+    
+    #inicio h1 {
+        font-size: 1.5em;
+        margin-bottom: 5px;
+    }
+    
+    .botones-inicio {
+        margin-top: 10px;
+    }
+    
+    body {
+        padding-top: 120px;
+    }
+}
+
+.formulario {
+    position: relative;
+    z-index: 9150;  /* Entre modalAgendarCita y modalCitaInfo */
+    width: 80%; /* <-- Añade esto */
+    max-width: 350px; /* Puedes ajustar el tamaño si quieres */
+    margin: 0 auto;
+}
+
+/* Mejora la visibilidad de los labels y campos del formulario */
+.formulario label {
+    color: #222 !important;
+    font-weight: 600;
+}
+
+.formulario input,
+.formulario select,
+.formulario textarea {
+    background: #fff !important;
+    color: #222 !important;
+    border: 1px solid #2c3e50;
+}
+
+.formulario input, .formulario select, .formulario textarea {
+    width: 100%;
+    padding: 8px 10px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    border: 1px solid rgba(4, 0, 77, 0.8);
+    background: #f8fafc;
+    color: #222;
+    font-size: 1em;
+    box-sizing: border-box;
+}
+
+.formulario textarea {
+    min-height: 60px;
+    resize: vertical;
+}
+
+.botones {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 18px;
+    position: relative;
+    z-index: 9200;
+}
+
+.botones button {
+    padding: 8px 18px;
+    border-radius: 6px;
+    border: none;
+    font-size: 1em;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+
+.botones .cerrar {
+    background: rgba(4, 0, 77, 1);
+    color: #fff;
+}
+.botones .cerrar:hover {
+    background: rgba(4, 0, 77, 1);
+}
+
+.botones .guardar {
+    background: #fff;
+    color: rgba(4, 0, 77, 1);
+    border: 1px solid rgba(4, 0, 77, 1);
+}
+.botones .guardar:hover {
+    background: rgba(4, 0, 77, 1);
+    color: #fff;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    bottom: 0;
+    background: rgba(4, 0, 77, 0.45);
+    z-index: 9000;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(4px);
+}
+
+.modal.activo {
+    display: flex;
+    animation: modalFadeIn 0.3s ease-in-out;
+}
+
+#modalAgendarCita {
+    z-index: 9100;
+}
+
+#modalCitaInfo {
+    z-index: 9200;
+}
+
+#modalCitaInfo section,
+#busquedaPersonalizada {
+    background: linear-gradient(135deg, rgba(4, 0, 77, 1) 0%, rgba(4, 0, 77, 0.8) 50%, rgba(0, 0, 0, 1) 100%);
+    color: #fff;
+    padding: 40px 30px 30px 30px;
+    border-radius: 16px;
+    min-width: 320px;
+    text-align: center;
+    box-shadow: 0 8px 32px 0 rgba(4, 0, 77, 0.18);
+    z-index: 900;
+}
+
+#busquedaPersonalizada h2 {
+    margin-bottom: 15px;
+    font-size: 1.4em;
+    color: #fff;
+}
+
+#busquedaPersonalizada input[type="text"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    border: 1px solid rgba(4, 0, 77, 0.8);
+    background: #f8fafc;
+    color: #222;
+    font-size: 1em;
+    box-sizing: border-box;
+}
+
+#busquedaPersonalizada .botones button {
+    padding: 8px 18px;
+    border-radius: 6px;
+    border: none;
+    font-size: 1em;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+
+#busquedaPersonalizada .botones .cerrar {
+    background: #6c757d; /* Un gris neutro */
+    color: #fff;
+}
+
+#busquedaPersonalizada .botones .cerrar:hover {
+    background: #5a6268;
+}
+
+#busquedaPersonalizada .botones button:not(.cerrar) {
+    background: #fff; /* Similar al guardar */
+    color: rgba(4, 0, 77, 1);
+    border: 1px solid rgba(4, 0, 77, 1);
+}
+
+#busquedaPersonalizada .botones button:not(.cerrar):hover {
+    background: rgba(4, 0, 77, 1);
+    color: #fff;
+}
+
+#modalCitaInfo h2 {
+    margin-bottom: 10px;
+    font-size: 1.3em;
+    font-weight: 700;
+    z-index: 3;
+}
+
+#modalCitaInfo p {
+    margin-bottom: 18px;
+    font-size: 1.1em;
+    z-index: 3;
+}
+
+#modalCitaInfo .cerrar {
+    background: rgba(4, 0, 77, 1);
+    color: #fff;
+    border: none;
+    padding: 8px 18px;
+    border-radius: 6px;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+#cardsCitas {
+    max-width: 100%;
+    margin: 30px 0;
+    display: flex;
+    gap: 25px;
+    padding: 20px 40px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    position: relative;
+    flex-wrap: nowrap; /* Asegura que las cards estén en una línea */
+}
+
+#cardsCitas::-webkit-scrollbar {
+    display: none; /* Ocultar scrollbar en navegadores WebKit */
+}
+/* Card de cita */
+.card-cita {
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 4px 16px rgba(4,0,77,0.10);
+    padding: 22px 18px;
+    margin: 18px 0;
+    max-width: 370px;
+    min-width: 320px;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    transition: box-shadow 0.2s, transform 0.2s;
+    position: relative;
+    border-left: 6px solid rgba(4, 0, 77, 0.8);
+}
+
+.card-cita:hover {
+    box-shadow: 0 8px 24px rgba(4,0,77,0.18);
+    transform: translateY(-2px) scale(1.01);
+}
+
+.card-cita .foto-mascota {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #e0e0e0;
+    background: #f8f8f8;
+    margin-top: 4px;
+}
+
+.card-cita .info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.card-cita .nombre-mascota {
+    font-size: 1.18em;
+    font-weight: bold;
+    color: #4e6e58;
+    margin-bottom: 4px;
+    letter-spacing: 0.5px;
+}
+
+.card-cita .detalle {
+    font-size: 0.98em;
+    color: #666;
+    margin-bottom: 2px;
+    line-height: 1.3;
+}
+
+/* Card de cita mejorada */
+.card-cita {
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 4px 16px rgba(4,0,77,0.10);
+    padding: 22px 18px;
+    margin: 18px 0;
+    max-width: 370px;
+    min-width: 320px;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    transition: box-shadow 0.2s, transform 0.2s;
+    position: relative;
+    border-left: 6px solid #4e6e58;
+}
+
+.card-cita:hover {
+    box-shadow: 0 8px 24px rgba(4,0,77,0.18);
+    transform: translateY(-2px) scale(1.01);
+}
+
+.card-cita .foto-mascota {
+    width: 68px;
+    height: 68px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #e0e0e0;
+    background: #f8f8f8;
+    margin-top: 4px;
+}
+
+.card-cita .info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.card-cita .nombre-mascota {
+    font-size: 1.18em;
+    font-weight: bold;
+    color: #2d3a4e;
+    margin-bottom: 2px;
+    letter-spacing: 0.5px;
+}
+
+.card-cita .detalle {
+    font-size: 0.98em;
+    color: #444;
+    margin-bottom: 1px;
+    line-height: 1.3;
+}
+
+.card-cita .detalle select.estado-cita {
+    margin-left: 6px;
+    padding: 2px 8px;
+    border-radius: 5px;
+    border: 1px solid #4e6e58;
+    background: #f4f8fa;
+    color: #2d3a4e;
+    font-weight: 500;
+    font-size: 0.98em;
+}
+
+.card-cita .acciones-card {
+    margin-top: 8px;
+    display: flex;
+    gap: 10px;
+}
+
+.card-cita .acciones-card button {
+    background: #f8fafc;
+    border: 1px solid #4e6e58;
+    color: #4e6e58;
+    border-radius: 6px;
+    padding: 4px 10px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+
+.card-cita .acciones-card button:hover {
+    background: #4e6e58;
+    color: #fff;
+}
+
+/* Botones de navegación */
+.scroll-btn {
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-image: linear-gradient(85deg, #000000, #ffffff 60%, rgba(4, 0, 77, 1));
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.3s;
+}
+
+.scroll-btn:hover {
+    background: rgba(4, 0, 77, 1);
+    color: #fff;
+}
+
+.scroll-btn.left {
+    left: 10px;
+}
+
+.scroll-btn.right {
+    right: 10px;
+}
+
+/* Ocultar botones en dispositivos táctiles */
+@media (hover: none) {
+    .scroll-btn {
+        display: none;
+    }
+}
+
+/* Ajuste para dispositivos móviles */
+@media (max-width: 768px) {
+    #cardsCitas {
+        padding: 20px;
+    }
+}
+
