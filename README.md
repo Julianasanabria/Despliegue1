@@ -1,55 +1,86 @@
-# 🌱 Bienvenido/a a mi espacio de aprendizaje — dev-juli
+🚀 Despliegue1 – Mi primer portafolio web | Karen Juliana Sanabria
 
-Hola, soy **Karen Juliana Sanabria Pinzón**, estudiante técnica en **Análisis y Desarrollo de Software** en el SENA (Socorro, Santander).  
-Este repositorio contiene mis primeros proyectos académicos y personales mientras aprendo a programar.
+Hola, soy Karen Juliana Sanabria Pinzón, estudiante técnica en Análisis y Desarrollo de Software en el SENA (Socorro, Santander).
+Este repositorio contiene mis primeros proyectos académicos y personales, desarrollados mientras aprendo a programar.
+Aquí no hay código perfecto… pero sí mucho esfuerzo, práctica y ganas de aprender.
 
-⚠️ **Nota importante**:  
-Soy principiante. Algunos códigos tienen errores, están incompletos o desorganizados… ¡y eso está bien!  
-Estoy aquí para **aprender, practicar y mejorar cada día**. Cada archivo es un paso en mi camino como desarrolladora.
+⚠️ Nota importante:
+Soy principiante. Algunos proyectos tienen errores, están incompletos o desorganizados… ¡y eso está bien!
+Cada línea de código es un paso en mi camino como desarrolladora. Estoy aquí para crecer, aprender y mejorar.
 
----
+📁 Proyectos destacados
+🔹 Juego del Ahorcado (ahorcaditp/) – Vue.js
 
-## 📁 Proyectos destacados
+Juego interactivo donde se adivinan palabras.
 
-### 🔹 Formulario de suscripción (`Formulario/`)
-- Página básica con HTML y CSS.
-- Objetivo: Practicar estructura de formularios y validación visual.
+¿Qué aprendí? Estructurar una app pequeña y manejar estado reactivo.
 
-### 🔹 Juego del Ahorcado (`ahorcado/`)
-- Juego simple en HTML, CSS y JavaScript.
-- Objetivo: Aplicar lógica condicional y manipulación del DOM.
+🔹 CV Steve (cvSteve/)
 
-### 🔹 Restaurante "El Perro Bravo" (`restaurantePerroBravo/`)
-- Sitio web básico de restaurante.
-- Objetivo: Maquetación con HTML/CSS y estructura de menú.
+Hoja de vida interactiva con diseño moderno.
 
-### 🔹 Veterinaria (`veterinaria/`)
-- Página informativa de una clínica veterinaria.
-- Objetivo: Uso de imágenes, estilos y secciones básicas.
+¿Qué aprendí? Diseño responsivo y organización con flexbox/grid.
 
-### 🔹 PokéAPI (`Pokeapi.html`)
-- Integración básica con la API de Pokémon (solo frontend).
-- Objetivo: Aprender cómo consumir APIs desde el navegador.
+🔹 Formulario con validaciones (Formulario/)
 
-### 🔹 Quién soy / Steve Smith / Superhéroes / Zapatos (`*.html`, `*.css`)
-- Proyectos de práctica en maquetación y diseño.
-- Objetivo: Dominar estructura HTML y estilos CSS.
+Formulario con validación de campos como nombre, correo y mensaje.
 
-### 🔹 Galería y tarjetas (`índice.html`, `pinchar.html`, etc.)
-- Diseño de tarjetas interactivas y galerías.
-- Objetivo: Aprender flexbox/grid y efectos visuales.
+¿Qué aprendí? Captura de datos y retroalimentación al usuario.
 
----
+🔹 PokéAPI (pokeApi/)
 
-## 🛠 Tecnologías que estoy explorando
-- HTML5
-- CSS3
-- JavaScript (básico)
-- Git/GitHub (en proceso de mejora)
+Página que muestra pokemones consumiendo una API pública.
 
----
+¿Qué aprendí? Trabajar con JSON y renderizar información dinámica.
 
-## 💡 ¿Cómo usar este repositorio?
-1. Clona el repositorio:
-   ```bash
-   git clone https://github.com/dev-juli/dev-juli.git
+🔹 Quién Soy (quienSoy/)
+
+Versión creativa de hoja de vida personal.
+
+¿Qué aprendí? Animaciones y transiciones con CSS.
+
+🔹 Restaurante "El Perro Bravo" (restaurantePerroBravo/) – Vue.js
+
+Sistema básico para asignar mesas y ver su estado.
+
+¿Qué aprendí? Manejo de eventos y estado global en componentes.
+
+🔹 Superhéroes (superheroes/)
+
+Galería de tarjetas con superhéroes.
+
+¿Qué aprendí? Organización de contenido y uso de grid.
+
+🔹 Tienda de Zapatos (tiendaZapatos/)
+
+Catálogo de productos de una tienda ficticia.
+
+¿Qué aprendí? Estructura de un sitio comercial básico.
+
+🔹 Veterinaria (veterinaria/) – Vue.js
+
+Sistema para asignar citas veterinarias con formularios reactivos.
+
+¿Qué aprendí? Uso de v-model, condicionales y listas dinámicas.
+
+🖼️ Imágenes (img/)
+
+Carpeta que contiene los recursos gráficos de los proyectos.
+
+🛠️ Tecnologías que estoy explorando
+
+HTML5 / CSS3 → Maquetación y diseño
+
+JavaScript → Lógica, DOM, Eventos, Fetch API
+
+Vue.js → Componentes y reactividad
+
+Git/GitHub → Control de versiones y colaboración
+
+Despliegue en Netlify
+
+📦 ¿Cómo ejecutar localmente?
+git clone https://github.com/Julianasanabria/Despliegue1.git
+
+link del despliegue https://misproyecto.netlify.app/?authuser=0
+
