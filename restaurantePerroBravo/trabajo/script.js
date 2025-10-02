@@ -1,6 +1,5 @@
 /* https://img.freepik.com/vector-premium/dibujos-animados-mesa_119631-412.jpg */
         let datosMesa = [];
-        let modo = 0;
         let numMesa = "";
         let mesaAEliminar = null;
 
@@ -11,9 +10,9 @@
 
         // Guardar o editar mesa
         document.getElementById("registrar").addEventListener("click", () => {
-            if (modo == 0) {
+            if (numMesa === "") { // Si no hay numMesa, es una nueva mesa
                 guardarMesa();
-            } else if (modo == 1) {
+            } else { // Si hay numMesa, estamos editando
                 editarMesa();
             }
         });
@@ -81,7 +80,7 @@
                 document.getElementById("personas").value = item.personas;
                 document.getElementById("estado").value = item.estado;
                 document.getElementById("registrar").textContent = "Editar Mesa";
-                modo = 1;
+                // modo = 1; // No es necesario, usamos numMesa para saber si editamos
                 numMesa = item.numero;
                 document.getElementById("modal").style.display = "flex";
             });
@@ -188,7 +187,7 @@
                 datosMesa[indice].personas = personas;
                 datosMesa[indice].estado = estado;
                 pintarMesas();
-                modo = 0;
+                numMesa = ""; // Limpiamos para el próximo registro
                 document.getElementById("registrar").textContent = "Guardar Mesa";
                 limpiar();
                 document.getElementById("modal").style.display = "none";
@@ -212,4 +211,3 @@
             mesaAEliminar = null;
             document.getElementById("botonConfirmar").style.display = "none";
         };
-

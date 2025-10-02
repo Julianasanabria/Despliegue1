@@ -1,31 +1,35 @@
 /* === NUEVO DISEÑO OSCURO Y MODERNO === */
 body {
-    font-family: 'Segoe UI', Arial, sans-serif;
+    font-family: 'Poppins', 'Segoe UI', Arial, sans-serif; /* Fuente más profesional */
     background: linear-gradient(135deg, #181c24 0%, #232946 100%);
     color: #f3f6f9;
     min-height: 100vh;
     margin: 0;
-    padding: 0;
+    padding: 0; /* Eliminamos el padding superior, ya no es necesario */
 }
 
 .header-proyectos {
     text-align: center;
-    padding: 3rem 1rem 1.5rem 1rem;
-    background: rgba(30,34,44,0.95);
-    box-shadow: 0 2px 16px 0 #0008;
-    border-bottom: 2px solid #232946;
+    padding: 2rem 1rem; /* Padding más compacto */
+    background: #181c24; /* Fondo sólido para un look más limpio */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+    border-bottom: 1px solid #2a314e;
 }
 .header-proyectos h1 {
-    font-size: 2.8rem;
+    font-size: 2.2rem; /* Tamaño más reducido y sutil */
     letter-spacing: 2px;
     color: #eebc1d;
-    margin-bottom: 0.3em;
-    text-shadow: 0 2px 8px #000a;
+    margin: 0; /* Centrado perfecto sin el subtítulo */
+    text-shadow: 0 2px 8px #00000099; /* Sombra de texto más sutil */
 }
-.subtitulo {
+.header-name {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
     color: #a1a6b4;
-    font-size: 1.2rem;
-    margin: 0;
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    opacity: 0.8;
 }
 
 .galeria-proyectos {
@@ -44,24 +48,24 @@ body {
 .tarjeta-proyecto {
     background: linear-gradient(135deg, #232946 60%, #181c24 100%);
     border-radius: 18px;
-    box-shadow: 0 6px 32px 0 #000a, 0 1.5px 8px 0 #eebc1d33;
+    box-shadow: 0 8px 24px -4px #00000080, 0 2px 8px 0 #eebc1d22; /* Sombra más suave */
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    transition: transform 0.25s, box-shadow 0.25s;
-    border: 1.5px solid #232946;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición más suave */
+    border: 1px solid #2a314e; /* Borde sutil */
     position: relative;
 }
 .tarjeta-proyecto:hover {
     transform: translateY(-8px) scale(1.025);
-    box-shadow: 0 12px 40px 0 #000c, 0 2px 12px 0 #eebc1d55;
+    box-shadow: 0 12px 32px -4px #000000cc, 0 4px 16px 0 #eebc1d44; /* Sombra más intensa en hover */
     border-color: #eebc1d;
 }
 
 .img-proyecto {
     width: 100%;
     aspect-ratio: 16/9;
-    background: #181c24;
+    background: #12151c; /* Fondo de imagen ligeramente más oscuro */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -71,8 +75,9 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: filter 0.3s;
+    transition: filter 0.3s, transform 0.3s ease; /* Añadida transición de transform */
     filter: grayscale(10%) brightness(0.95);
+    border-bottom: 1px solid #2a314e; /* Línea divisoria sutil */
 }
 .tarjeta-proyecto:hover .img-proyecto img {
     filter: grayscale(0%) brightness(1.05) drop-shadow(0 0 8px #eebc1d44);
@@ -88,7 +93,8 @@ body {
 }
 .contenido-proyecto h3 {
     color: #eebc1d;
-    font-size: 1.4rem;
+    font-size: 1.5rem; /* Título más grande */
+    font-weight: 600;
     margin-bottom: 0.5em;
     letter-spacing: 1px;
 }
@@ -100,20 +106,22 @@ body {
 
 .btn-proyecto {
     display: inline-block;
-    background: linear-gradient(90deg, #eebc1d 60%, #f3f6f9 100%);
+    background: linear-gradient(90deg, #eebc1d 0%, #f3d16a 100%); /* Degradado más cohesivo */
     color: #232946;
-    font-weight: bold;
+    font-weight: 600; /* Peso de fuente semibold */
     padding: 0.7em 1.5em;
     border-radius: 8px;
     text-decoration: none;
-    box-shadow: 0 2px 8px #eebc1d33;
-    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 12px #eebc1d22;
+    transition: all 0.3s ease; /* Transición más suave para todas las propiedades */
     margin-top: auto;
 }
 .btn-proyecto:hover {
-    background: linear-gradient(90deg, #232946 60%, #eebc1d 100%);
+    background: #eebc1d;
     color: #eebc1d;
-    box-shadow: 0 4px 16px #eebc1d55;
+    box-shadow: 0 6px 20px #eebc1d44;
+    background: #181c24; /* Cambio de fondo en hover */
+    border: 1px solid #eebc1d;
 }
 
 .footer-proyectos {

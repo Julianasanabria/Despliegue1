@@ -231,6 +231,11 @@ document.addEventListener('DOMContentLoaded', function () {
         cerrar_modal_formulario();
         mostrar_alerta('¡Éxito!', 'Cita agendada correctamente.', 'exito');
         renderizar_tarjetas_citas(lista_citas);
+        // Si el modal de búsqueda está abierto, actualiza la vista
+        const modalBusqueda = document.getElementById('modalParaBusquedaCita');
+        if (modalBusqueda && modalBusqueda.classList.contains('activo')) {
+            filtrar_y_renderizar();
+        }
     }
 
     // Renderizar cards de citas
@@ -285,11 +290,6 @@ document.addEventListener('DOMContentLoaded', function () {
             cambiar_estado_cita(id, sel.value);
         };
 });
-}
-
-// --- MODIFICADO: Crear card de cita (ahora solo agrega al array y renderiza) ---
-function crear_tarjeta_cita(objeto_cita) {
-    // Ya no se usa, ahora todo se maneja en el array y renderizado
 }
 
     // Tipos de alertas
